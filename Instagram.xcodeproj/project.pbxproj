@@ -28,6 +28,7 @@
 		835D919926069215004F4B49 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835D919826069215004F4B49 /* StorageManager.swift */; };
 		835D919C26069225004F4B49 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835D919B26069225004F4B49 /* AnalyticsManager.swift */; };
 		835D919F26069234004F4B49 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835D919E26069234004F4B49 /* HapticsManager.swift */; };
+		835D91B8260693C5004F4B49 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 835D91B7260693C5004F4B49 /* GoogleService-Info.plist */; };
 		83DF4DDE26068EA2005E1416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF4DDD26068EA2005E1416 /* AppDelegate.swift */; };
 		83DF4DE026068EA2005E1416 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF4DDF26068EA2005E1416 /* SceneDelegate.swift */; };
 		83DF4DE226068EA2005E1416 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF4DE126068EA2005E1416 /* HomeViewController.swift */; };
@@ -58,6 +59,7 @@
 		835D919826069215004F4B49 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		835D919B26069225004F4B49 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		835D919E26069234004F4B49 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		835D91B7260693C5004F4B49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		83DF4DDA26068EA2005E1416 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DF4DDD26068EA2005E1416 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83DF4DDF26068EA2005E1416 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		83DF4E0F26068FA1005E1416 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				835D91B7260693C5004F4B49 /* GoogleService-Info.plist */,
 				83DF4DE626068EA4005E1416 /* Assets.xcassets */,
 				83DF4DDD26068EA2005E1416 /* AppDelegate.swift */,
 				83DF4DDF26068EA2005E1416 /* SceneDelegate.swift */,
@@ -273,6 +276,7 @@
 			files = (
 				83DF4DEA26068EA4005E1416 /* LaunchScreen.storyboard in Resources */,
 				83DF4DE726068EA4005E1416 /* Assets.xcassets in Resources */,
+				835D91B8260693C5004F4B49 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
