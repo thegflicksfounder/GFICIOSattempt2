@@ -28,27 +28,80 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     private func fetchPosts() {
         // mock data
-        let postData: [HomeFeedCellType] = [
-            .poster(
-                viewModel: PosterCollectionViewCellViewModel(
-                    username: "iosacademy",
-                    profilePictureURL: URL(string: "https://iosacademy.io/assets/images/brand/icon.jpg")!
-                )
-            ),
-            .post(
-                viewModel: PostCollectionViewCellViewModel(
-                    postUrl: URL(string: "https://iosacademy.io/assets/images/courses/swiftui.png")!
-                )
-            ),
-            .actions(viewModel: PostActionsCollectionViewCellViewModel(isLiked: true)),
-            .likeCount(viewModel: PostLikesCollectionViewCellViewModel(likers: ["kanyewest"])),
-            .caption(viewModel: PostCaptionCollectionViewCellViewModel(username: "iosacademy", caption: "This is an awesome first post!")),
-            .timestamp(viewModel: PostDatetimeCollectionViewCellViewModel(date: Date()))
-        ]
+        guard let username = UserDefaults.standard.string(forKey: "username") else {
+            return
+        }
+        DatabaseManager.shared.posts(for: username) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let posts):
 
-        viewModels.append(postData)
-        collectionView?.reloadData()
+                    let group = DispatchGroup()
 
+                    posts.forEach { model in
+                        group.enter()
+                        self?.createViewModel(
+                            model: model,
+                            username: username,
+                            completion: { success in
+                                defer {
+                                    group.leave()
+                                }
+                                if !success {
+                                    print("failed to create VM")
+                                }
+                            }
+                        )
+                    }
+
+                    group.notify(queue: .main) {
+                        self?.collectionView?.reloadData()
+                    }
+
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
+
+    private func createViewModel(
+        model: Post,
+        username: String,
+        completion: @escaping (Bool) -> Void
+    ) {
+        StorageManager.shared.profilePictureURL(for: username) { [weak self] profilePictureURL in
+            guard let postUrl = URL(string: model.postUrlString),
+                  let profilePhotoUrl = profilePictureURL else {
+                return
+            }
+
+            let postData: [HomeFeedCellType] = [
+                .poster(
+                    viewModel: PosterCollectionViewCellViewModel(
+                        username: username,
+                        profilePictureURL: profilePhotoUrl
+                    )
+                ),
+                .post(
+                    viewModel: PostCollectionViewCellViewModel(
+                        postUrl: postUrl
+                    )
+                ),
+                .actions(viewModel: PostActionsCollectionViewCellViewModel(isLiked: false)),
+                .likeCount(viewModel: PostLikesCollectionViewCellViewModel(likers: [])),
+                .caption(viewModel: PostCaptionCollectionViewCellViewModel(
+                            username: username,
+                            caption: model.caption)),
+                .timestamp(
+                    viewModel: PostDatetimeCollectionViewCellViewModel(
+                        date: DateFormatter.formatter.date(from: model.postedDate) ?? Date()
+                    )
+                )
+            ]
+            self?.viewModels.append(postData)
+            completion(true)
+        }
     }
 
     // CollectionView

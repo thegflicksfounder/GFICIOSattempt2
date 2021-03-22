@@ -45,6 +45,8 @@
 		83C50577260818830019BB04 /* PostLikesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C50576260818830019BB04 /* PostLikesCollectionViewCell.swift */; };
 		83C5057A260818930019BB04 /* PostCaptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C50579260818930019BB04 /* PostCaptionCollectionViewCell.swift */; };
 		83C5057D2608189D0019BB04 /* PostDateTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C5057C2608189D0019BB04 /* PostDateTimeCollectionViewCell.swift */; };
+		83C505812608CE550019BB04 /* PostEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C505802608CE550019BB04 /* PostEditViewController.swift */; };
+		83C505842608D4230019BB04 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C505832608D4230019BB04 /* PhotoCollectionViewCell.swift */; };
 		83DF4DDE26068EA2005E1416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF4DDD26068EA2005E1416 /* AppDelegate.swift */; };
 		83DF4DE026068EA2005E1416 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF4DDF26068EA2005E1416 /* SceneDelegate.swift */; };
 		83DF4DE226068EA2005E1416 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF4DE126068EA2005E1416 /* HomeViewController.swift */; };
@@ -92,6 +94,8 @@
 		83C50576260818830019BB04 /* PostLikesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLikesCollectionViewCell.swift; sourceTree = "<group>"; };
 		83C50579260818930019BB04 /* PostCaptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCaptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		83C5057C2608189D0019BB04 /* PostDateTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDateTimeCollectionViewCell.swift; sourceTree = "<group>"; };
+		83C505802608CE550019BB04 /* PostEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditViewController.swift; sourceTree = "<group>"; };
+		83C505832608D4230019BB04 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		83DF4DDA26068EA2005E1416 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DF4DDD26068EA2005E1416 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83DF4DDF26068EA2005E1416 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				835D917D2606917D004F4B49 /* ListViewController.swift */,
 				835D918026069189004F4B49 /* PostViewController.swift */,
 				835D918326069195004F4B49 /* SettingsViewController.swift */,
+				83C505802608CE550019BB04 /* PostEditViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				83DF4DE826068EA4005E1416 /* LaunchScreen.storyboard */,
 				83C505372607A2840019BB04 /* SignInHeaderView.swift */,
 				83C5053D2607A5EE0019BB04 /* IGTextField.swift */,
+				83C505832608D4230019BB04 /* PhotoCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 				83C5054A260813AA0019BB04 /* PostLikesCollectionViewCellViewModel.swift in Sources */,
 				835D919626069209004F4B49 /* DatabaseManager.swift in Sources */,
 				835D918D260691CD004F4B49 /* Relationship.swift in Sources */,
+				83C505812608CE550019BB04 /* PostEditViewController.swift in Sources */,
 				835D918A260691C1004F4B49 /* Post.swift in Sources */,
 				83C5054D260813EB0019BB04 /* PostCaptionCollectionViewCellViewModel.swift in Sources */,
 				835D9193260691F8004F4B49 /* AuthManager.swift in Sources */,
@@ -419,6 +426,7 @@
 				83C505472608137A0019BB04 /* PostActionsCollectionViewCellViewModel.swift in Sources */,
 				83C5057D2608189D0019BB04 /* PostDateTimeCollectionViewCell.swift in Sources */,
 				835D916D26069110004F4B49 /* ProfileViewController.swift in Sources */,
+				83C505842608D4230019BB04 /* PhotoCollectionViewCell.swift in Sources */,
 				835D919F26069234004F4B49 /* HapticsManager.swift in Sources */,
 				83C5056E260817DE0019BB04 /* PosterCollectionViewCell.swift in Sources */,
 				83DF4DDE26068EA2005E1416 /* AppDelegate.swift in Sources */,
@@ -564,6 +572,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3798Z36XLV;
 				INFOPLIST_FILE = Instagram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -584,6 +593,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3798Z36XLV;
 				INFOPLIST_FILE = Instagram/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
