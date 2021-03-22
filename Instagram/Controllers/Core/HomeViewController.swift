@@ -202,9 +202,9 @@ extension HomeViewController: PostActionsCollectionViewCellDelegate {
     }
 
     func postActionsCollectionViewCellDidTapComment(_ cell: PostActionsCollectionViewCell) {
-        let vc = PostViewController()
-        vc.title = "Post"
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = PostViewController(post: )
+//        vc.title = "Post"
+//        navigationController?.pushViewController(vc, animated: true)
     }
 
     func postActionsCollectionViewCellDidTapLike(_ cell: PostActionsCollectionViewCell, isLiked: Bool) {

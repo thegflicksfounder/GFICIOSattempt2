@@ -29,6 +29,7 @@
 		835D919C26069225004F4B49 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835D919B26069225004F4B49 /* AnalyticsManager.swift */; };
 		835D919F26069234004F4B49 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835D919E26069234004F4B49 /* HapticsManager.swift */; };
 		835D91B8260693C5004F4B49 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 835D91B7260693C5004F4B49 /* GoogleService-Info.plist */; };
+		83BAC522260900FC00A98273 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BAC521260900FC00A98273 /* SearchResultsViewController.swift */; };
 		83C505382607A2840019BB04 /* SignInHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C505372607A2840019BB04 /* SignInHeaderView.swift */; };
 		83C5053B2607A33E0019BB04 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C5053A2607A33E0019BB04 /* Extensions.swift */; };
 		83C5053E2607A5EE0019BB04 /* IGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C5053D2607A5EE0019BB04 /* IGTextField.swift */; };
@@ -78,6 +79,7 @@
 		835D919B26069225004F4B49 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		835D919E26069234004F4B49 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		835D91B7260693C5004F4B49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		83BAC521260900FC00A98273 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		83C505372607A2840019BB04 /* SignInHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInHeaderView.swift; sourceTree = "<group>"; };
 		83C5053A2607A33E0019BB04 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		83C5053D2607A5EE0019BB04 /* IGTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGTextField.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				835D918026069189004F4B49 /* PostViewController.swift */,
 				835D918326069195004F4B49 /* SettingsViewController.swift */,
 				83C505802608CE550019BB04 /* PostEditViewController.swift */,
+				83BAC521260900FC00A98273 /* SearchResultsViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				835D916A26069104004F4B49 /* NotificationsViewController.swift in Sources */,
 				83C50550260814120019BB04 /* PostDatetimeCollectionViewCellViewModel.swift in Sources */,
 				83C505382607A2840019BB04 /* SignInHeaderView.swift in Sources */,
+				83BAC522260900FC00A98273 /* SearchResultsViewController.swift in Sources */,
 				835D918426069195004F4B49 /* SettingsViewController.swift in Sources */,
 				83C5053E2607A5EE0019BB04 /* IGTextField.swift in Sources */,
 				83C505442608133F0019BB04 /* PostCollectionViewCellViewModel.swift in Sources */,
