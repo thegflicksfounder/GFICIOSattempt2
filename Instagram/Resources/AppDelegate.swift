@@ -7,11 +7,17 @@
 
 import Firebase
 import UIKit
+import Appirater
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        Appirater.appLaunched(true)
+        Appirater.setAppId("3182731283")
+        Appirater.setDebug(false)
+        Appirater.setDaysUntilPrompt(3)
 
         FirebaseApp.configure()
 
@@ -30,6 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        NotificationsManager.shared.create(notification: model, for: "iosacademy")
 
         return true
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        Appirater.appEnteredForeground(true)
     }
 
     // MARK: UISceneSession Lifecycle

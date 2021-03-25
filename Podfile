@@ -3,6 +3,7 @@
 
 target 'Instagram' do
   use_frameworks!
+  pod 'Appirater'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
@@ -11,3 +12,4 @@ target 'Instagram' do
   pod 'SDWebImage'
 
 end
+

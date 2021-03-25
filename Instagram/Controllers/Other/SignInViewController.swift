@@ -69,7 +69,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         title = "Sign In"
         view.backgroundColor = .systemBackground
-        headerView.backgroundColor = .red
         addSubviews()
 
         emailField.delegate = self
@@ -131,6 +130,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 switch result {
                 case .success:
+                    HapticManager.shared.vibrate(for: .success)
                     let vc = TabBarViewController()
                     vc.modalPresentationStyle = .fullScreen
                     self?.present(
@@ -140,6 +140,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                     )
 
                 case .failure(let error):
+                    HapticManager.shared.vibrate(for: .error)
                     print(error)
                 }
             }

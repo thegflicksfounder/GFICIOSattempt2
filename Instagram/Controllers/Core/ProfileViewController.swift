@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController {
     private var headerViewModel: ProfileHeaderViewModel?
 
     private var posts: [Post] = []
+    
+    private var observer: NSObjectProtocol?
 
     // MARK: - Init
 
@@ -41,6 +43,17 @@ class ProfileViewController: UIViewController {
         configureNavBar()
         configureCollectionView()
         fetchProfileInfo()
+
+        if isCurrentUser {
+            observer = NotificationCenter.default.addObserver(
+                forName: .didPostNotification,
+                object: nil,
+                queue: .main
+            ) { [weak self] _ in
+                self?.posts.removeAll()
+                self?.fetchProfileInfo()
+            }
+        }
     }
 
     override func viewDidLayoutSubviews() {
@@ -113,6 +126,7 @@ class ProfileViewController: UIViewController {
                 defer {
                     group.leave()
                 }
+                print(isFollowing)
                 buttonType = .follow(isFollowing: isFollowing)
             }
         }
@@ -184,7 +198,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         let post = posts[indexPath.row]
-        let vc = PostViewController(post: post)
+        let vc = PostViewController(post: post, owner: user.username)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -251,18 +265,20 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
 
 extension ProfileViewController: ProfileHeaderCountViewDelegate {
     func profileHeaderCountViewDidTapFollowers(_ containerView: ProfileHeaderCountView) {
-
+        let vc = ListViewController(type: .followers(user: user))
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     func profileHeaderCountViewDidTapFollowing(_ containerView: ProfileHeaderCountView) {
-
+        let vc = ListViewController(type: .following(user: user))
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     func profileHeaderCountViewDidTapPosts(_ containerView: ProfileHeaderCountView) {
         guard posts.count >= 18 else {
             return
         }
-        collectionView?.setContentOffset(CGPoint(x: 0, y: view.width * 0.7),
+        collectionView?.setContentOffset(CGPoint(x: 0, y: view.width * 0.4),
                                          animated: true)
     }
 
@@ -277,11 +293,31 @@ extension ProfileViewController: ProfileHeaderCountViewDelegate {
     }
 
     func profileHeaderCountViewDidTapFollow(_ containerView: ProfileHeaderCountView) {
-
+        DatabaseManager.shared.updateRelationship(
+            state: .follow,
+            for: user.username
+        ) { [weak self] success in
+            if !success {
+                print("failed to follow")
+                DispatchQueue.main.async {
+                    self?.collectionView?.reloadData()
+                }
+            }
+        }
     }
 
     func profileHeaderCountViewDidTapUnFollow(_ containerView: ProfileHeaderCountView) {
-
+        DatabaseManager.shared.updateRelationship(
+            state: .unfollow,
+            for: user.username
+        ) { [weak self] success in
+            if !success {
+                print("failed to follow")
+                DispatchQueue.main.async {
+                    self?.collectionView?.reloadData()
+                }
+            }
+        }
     }
 }
 
