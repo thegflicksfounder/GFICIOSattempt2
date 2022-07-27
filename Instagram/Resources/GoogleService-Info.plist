@@ -13,21 +13,21 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>io.iosacademy.Instagram</string>
+	<string>gymflicks.ios.team</string>
 	<key>PROJECT_ID</key>
 	<string>instagram-7c0d4</string>
 	<key>STORAGE_BUCKET</key>
 	<string>instagram-7c0d4.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:600597982575:ios:abe1e7db90d3576902cc9a</string>
 </dict>
