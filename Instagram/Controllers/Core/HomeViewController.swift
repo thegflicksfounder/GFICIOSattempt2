@@ -393,7 +393,7 @@ extension HomeViewController: PosterCollectionViewCellDelegate {
     }
 
     func posterCollectionViewCellDidTapUsername(_ cell: PosterCollectionViewCell) {
-        let vc = ProfileViewController(user: User(username: "kanyewest", email: "kanye@gmail.com"))
+        let vc = ProfileViewController(user: )
         navigationController?.pushViewController(vc, animated: true)
     }
 }
